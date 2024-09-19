@@ -13,13 +13,3 @@ print("Movement detected: YES / NO")
 # Calculate  Fahrenheit. 
 Degree = float(input("\nEnter temperature in C°: "))
 print(f"The given temperature {Degree}C° is {round(Degree*1.8+32,1)}F°.")
-
-
-
-
-# input("Your first name: ")
-# input("Your last name: ")
-# from datetime import datetime
-# birthday = input("Enter your date of birth: ")
-# bday = datetime.strptime(birthday, '%d/%m/%Y')
-# print (bday)
