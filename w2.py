@@ -1,10 +1,5 @@
-# This file 'main.py' is the combination of w1 and w2.
+# THIS FILE IS ONLY w2 TASK
 
-
-
-# Username Program
-Fi = str(input("Enter your first name: "))
-La = str(input("Enter your last name: "))
 print("\nEnter your Birthday")
 # Formatted Day
 while True: 
@@ -29,6 +24,8 @@ while True:
             break
     except ValueError:
         print("That's not a number! Please try again")
+
+
 # Formatted Year
 while True: 
     try: 
@@ -40,18 +37,10 @@ while True:
             break
     except ValueError:
         print("That's not a number! Please try again")
+
 Bday = Year + Month + Day
-print(f"Hello {Fi} {La}, welcome to the Motion Detector!\nLet's Start!!!\nYour Username is: {Fi[0:2]}{La[0:3]}{Bday}")
-# Movement in room
-input("\nHas there been movement in the room? (yes/no): ")
-print("Movement detected: YES / NO")
-# Calculate  Fahrenheit. 
-Degree = float(input("\nEnter temperature in C°: "))
-print(f"The given temperature {Degree}C° is {round(Degree*1.8+32,1)}F°.")
-
+print (Bday)
 # Asking Age and Name
-#If User wirte 'quit' from the beginning of this part, the program will quit...
-
 Q = "quit"
 Name = input("Enter your name: ")
 if Name == Q:
@@ -91,12 +80,11 @@ else:
             elif TempInput != "c" or TempInput != "f":
                 print ("Not valid!!! Please enter 'c' or 'f'")
 
-    # Detected Movement
+    # Detected
     List = ['Y','N']
     Choice = random.choice(List)
     if Choice == 'Y':
         print("Movement Detected")
     else:
         print("Movement not Detected")   
-
 
