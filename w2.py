@@ -47,7 +47,7 @@ if Name == Q:
     print("Goodbye!")
 else:
     if Name == "Beam Le":
-        print(f"Welcome {Name}! You have the admin rights.")
+        print(f"Welcome {Name}! You have the ADMIN RIGHTS.")
     elif Name == "Mira":
         print(f"Welcome {Name}! You have SUPER-USER rights.")
     else:
