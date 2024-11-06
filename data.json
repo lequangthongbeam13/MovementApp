@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "name": "Beam Le",
+            "password": "Beam13",
+            "rights": "Admin Rights"
+        },
+        {
+            "name": "Mira",
+            "password": "Mira1",
+            "rights": "SUPER-USER"
+        }
+    ]
+}

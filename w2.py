@@ -38,7 +38,7 @@ while True:
     except ValueError:
         print("That's not a number! Please try again")
 
-Bday = Year + Month + Day
+Bday = Year+"/" + Month+"/" + Day
 print (Bday)
 # Asking Age and Name
 Q = "quit"
@@ -53,7 +53,7 @@ else:
     else:
         Age = input("Enter your age: ")
         if int(Age) >= 18:
-            print(f"Welcome {Name}! You have viwer rights.")
+            print(f"Welcome {Name}! You have viewer rights.")
         else:
             print(f"Greetings {Name}! You are too young to operate this program.")
     # Temperature

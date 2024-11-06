@@ -1,7 +1,4 @@
 # This file 'main.py' is the combination of w1 and w2.
-
-
-
 # Username Program
 Fi = str(input("Enter your first name: "))
 La = str(input("Enter your last name: "))
