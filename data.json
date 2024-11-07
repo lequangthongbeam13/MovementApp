@@ -9,6 +9,11 @@
             "name": "Mira",
             "password": "Mira1",
             "rights": "SUPER-USER"
+        },
+        {
+            "name": "Beam New",
+            "password": "2)jBM1u;",
+            "rights": "User Rights"
         }
     ]
 }
