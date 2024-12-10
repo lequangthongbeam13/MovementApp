@@ -14,21 +14,22 @@ def AskMenu():
 def NavigateMenu():
     while True: 
         choice = AskMenu()
-        if choice  == "2":
-            CreateNewAcc()
-            PasswordGenerator()
-            UpdateInformation()
+        if choice == "2":
+            result = CreateNewAcc()
+            if result == "back":
+                return  # Back to main menu
+            else:
+                PasswordGenerator()
+                UpdateInformation()
         elif choice == "3":
             print("See You Next Time!")
+            exit()
         elif choice == "1":
-            LoginUser()
+            result = LoginUser()
+            if result == "back":
+                return  # Quay lại menu chính
         else:
             print("\nPlease choose correct option in MENU")
-            print("\n1. Login")
-            print("2. Create a new account")
-            print("3. Exit")
-            NavigateMenu()
-        return choice
 # MENU 2
 def Menu2():
     print ("\nChoose option from Menu below:")
@@ -155,52 +156,50 @@ def ShowGraph():
 def CreateNewAcc():
     global Name
     print("\nHello new User!")
-    print ("- Enter (1) to Go Back.")
-    print ("- Or you can enter your first name to create new account.")
+    print("- Enter (1) to Go Back.")
+    print("- Or you can enter your first name to create new account.")
     Fi = str(input("Enter your first name: "))
     if Fi == "1":
-        main()
+        return "back"  # Turn back to main menu
     else:
         La = str(input("Enter your last name: "))
         print("\nEnter your Birthday")
-        # Formatted Day
+        # Xử lý nhập ngày, tháng, năm như hiện tại
         while True: 
             try: 
-                Day = (input("Day(dd): "))
-                if (int(Day)) >= 32 or int(Day) == 0 or int(Day)< 0 or len(str(Day)) != 2:
-                    print("Wrong Formatted Date, please try again in right format(dd) and the number from 01 to 31")
-                    
+                Day = input("Day(dd): ")
+                if int(Day) > 31 or int(Day) < 1 or len(Day) != 2:
+                    print("Invalid day. Try again.")
                 else:
                     break
             except ValueError:
-                print("That's not a number! Please try again")      
+                print("Please enter a valid number.")
         
-        # Formatted Month
         while True: 
             try: 
-                Month =(input("Month(mm): "))
-                if (int(Month)) >= 13 or int(Month) == 0 or int(Month)< 0 or len(str(Month)) != 2:
-                    print("Wrong Formatted, please try again in right format(mm)and the number from 01 to 12")
-                    
+                Month = input("Month(mm): ")
+                if int(Month) > 12 or int(Month) < 1 or len(Month) != 2:
+                    print("Invalid month. Try again.")
                 else:
                     break
             except ValueError:
-                print("That's not a number! Please try again")
-        # Formatted Year
+                print("Please enter a valid number.")
+        
         while True: 
             try: 
-                Year =(input("Year(yyyy): "))
-                if (int(Year)) >=2025 or len(str(Year)) != 4:
-                    print("Wrong Formatted, please try again in right format(yyyy and the number < 2025)")
-                    
+                Year = input("Year(yyyy): ")
+                if int(Year) >= 2025 or len(Year) != 4:
+                    print("Invalid year. Try again.")
                 else:
                     break
             except ValueError:
-                print("That's not a number! Please try again")
+                print("Please enter a valid number.")
+
         Bday = Year + Month + Day
         Name = Fi + " " + La
-        print(f"Hello {Fi} {La}, welcome to the Motion Detector!\nLet's Start!!!\nYour Username is: {Fi[0:2]}{La[0:3]}{Bday}")
-    return Name
+        print(f"Hello {Fi} {La}, welcome to the Motion Detector!")
+        print(f"Your Username is: {Fi[0:2]}{La[0:3]}{Bday}")
+        return None
 def PasswordGenerator():
     global PassWord
     # Passwords Generator           
@@ -303,14 +302,14 @@ def LoginUser():
     return None
 # Final main function
 def main():
-    print("\n******************************")
-    print("* Welcome To Motion Detector *")
-    print("******************************")
-    print("1. Login")
-    print("2. Create a new account")
-    print("3. Exit")
-    NavigateMenu()
-    return None
+   while True:
+        print("\n******************************")
+        print("* Welcome To Motion Detector *")
+        print("******************************")
+        print("1. Login")
+        print("2. Create a new account")
+        print("3. Exit")
+        NavigateMenu()
 
 main()
 
